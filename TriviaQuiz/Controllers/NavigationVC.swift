@@ -19,7 +19,7 @@ import UIKit
 //    x  results model
 //    x  utils and extensions?
 //
-//   Check into github
+//  x Check into github
 //
 //  FUTURE:
 //   choose a categroy of questions in the ConfigurationVC - Later.
