@@ -17,6 +17,11 @@ struct ColorScheme {
         case white  = "White"
         case clear  = "Clear"
         case custom = "Custom"      // Roll your own
+        
+        // TODO: restructure this enum so I don't have to do this.
+        static var enumerateUserChooseable:[SchemeName] =
+          [.black, .brown, .blue, .red, .white, .clear ]
+        
     }
     var scheme:SchemeName = .clear
     var darkGradientTop:UIColor=UIColor.clear
@@ -27,7 +32,7 @@ struct ColorScheme {
     var titleFontColor:UIColor=UIColor.black
     
     init() {
-    }   // return all clear as useless defaults to avoid opnoxtionals
+    }   // return all clear as barely useful defaults to avoid obnoxionals
     init(scheme:SchemeName,
          darkGradTop:UIColor,
          darkGradBottom:UIColor,
