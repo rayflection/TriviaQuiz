@@ -17,6 +17,7 @@ class SplashVC: UIViewController {
     @IBOutlet private weak var quizDescription: UILabel!
     @IBOutlet private weak var beginButton: UIButton!
     @IBOutlet private weak var wrapperView: UIView!
+    @IBOutlet weak var versionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class SplashVC: UIViewController {
     private func render() {
         styleWrapperView()
         renderDescription()
+        renderVersion()
     }
     private func styleWrapperView() {
         let uiConfig = UIConfigFactory.getCurrentConfig()
@@ -44,7 +46,23 @@ class SplashVC: UIViewController {
             quizDescription.text = "You will be presented with \(count ) \(diff) \(type ) question\(count==1 ? "":"s")."
         }
     }
-    
+    func renderVersion() {
+        let short = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+        let ver   = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+        let df = DateFormatter()
+        df.dateFormat = "MMM dd, yyyy HH:mm:ss"
+        let date = df.string(from: Date())
+        if let short = short, let ver = ver {
+            var verString = "Version \(short) (\(ver)) - \(date)"
+            #if DEBUG_HOME
+                verString = "\(verString) (dev)"
+            #endif
+            versionLabel.text = verString
+        } else {
+            versionLabel.isHidden = true
+        }
+    }
+
     // ----------------------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentConfigSelectorPopupVC" {

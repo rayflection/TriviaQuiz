@@ -73,6 +73,12 @@
                                             <action selector="beginTapped:" destination="nFJ-cX-OOg" eventType="touchUpInside" id="KOu-NX-zys"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-nh-ZQs">
+                                        <rect key="frame" x="379.5" y="1021" width="35" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -80,7 +86,9 @@
                                     <constraint firstItem="d9k-mg-rpk" firstAttribute="centerY" secondItem="dvw-9r-gqs" secondAttribute="centerY" multiplier="1.7" id="0rh-9k-zcr"/>
                                     <constraint firstItem="lGc-o4-YWs" firstAttribute="centerY" secondItem="dvw-9r-gqs" secondAttribute="centerY" multiplier="1.2" id="5sE-pv-XUH"/>
                                     <constraint firstAttribute="trailing" secondItem="cwa-Gk-29G" secondAttribute="trailing" id="7MS-H6-9WL"/>
+                                    <constraint firstItem="jGk-nh-ZQs" firstAttribute="centerX" secondItem="dvw-9r-gqs" secondAttribute="centerX" id="7OX-4N-qTw"/>
                                     <constraint firstItem="xEO-tI-2Wi" firstAttribute="centerY" secondItem="dvw-9r-gqs" secondAttribute="centerY" multiplier="0.3" id="Aum-7K-PKu"/>
+                                    <constraint firstAttribute="bottom" secondItem="jGk-nh-ZQs" secondAttribute="bottom" constant="2" id="BIG-0v-JUT"/>
                                     <constraint firstItem="cwa-Gk-29G" firstAttribute="centerX" secondItem="dvw-9r-gqs" secondAttribute="centerX" id="ejE-Nz-RnK"/>
                                     <constraint firstItem="nB0-JF-yFZ" firstAttribute="top" secondItem="cwa-Gk-29G" secondAttribute="bottom" constant="-19" id="h1a-Oa-TCL"/>
                                     <constraint firstItem="nB0-JF-yFZ" firstAttribute="centerX" secondItem="dvw-9r-gqs" secondAttribute="centerX" id="h7F-DH-9eY"/>
@@ -106,12 +114,13 @@
                     <connections>
                         <outlet property="beginButton" destination="d9k-mg-rpk" id="aVE-Ja-9CT"/>
                         <outlet property="quizDescription" destination="cwa-Gk-29G" id="xB4-3y-fDF"/>
+                        <outlet property="versionLabel" destination="jGk-nh-ZQs" id="HjM-5t-8dd"/>
                         <outlet property="wrapperView" destination="dvw-9r-gqs" id="7IO-5H-R0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgI-Ij-3Bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95.625" y="-478.75"/>
+            <point key="canvasLocation" x="-95.683453237410077" y="-479.13669064748206"/>
         </scene>
         <!--Configuration SelectorVC-->
         <scene sceneID="EDy-2W-edn">
