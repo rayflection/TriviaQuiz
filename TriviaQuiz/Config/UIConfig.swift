@@ -117,14 +117,31 @@ class ColorSchemeFactory {
 }
 
 struct LayerSizes {
-    let cornerRadius = CGFloat(15)
-    let borderWidth  = CGFloat(2)
+    var cornerRadius = CGFloat(0)
+    var borderWidth  = CGFloat(0)
     // Font sizes?
+    
+    init() {
+        if let path = Bundle.main.path(forResource: "UIConfigData", ofType: "plist") {
+            if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
+                print (dic)
+                if let layersize = dic["LayerSize"] as? [String:Any] {
+                    if let corner = layersize["cornerRadius"]  as? CGFloat {
+                        self.cornerRadius = corner
+                    }
+                    if let border = layersize["borderWidth"] as? CGFloat {
+                        self.borderWidth = border
+                    }
+                }
+            }
+        }
+    }
 }
 
 struct UIConfig {
     var colorScheme = ColorSchemeFactory.defaultScheme()
     var layerSizes = LayerSizes()
+    
     init() {}
     init(scheme:ColorScheme.SchemeName) {
         colorScheme = ColorSchemeFactory.gimmaAScheme(scheme)
