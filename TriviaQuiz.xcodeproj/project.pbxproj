@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0F02EADD201AC40C00F7E985 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADC201AC40C00F7E985 /* BaseVC.swift */; };
 		0F02EADE201AC40C00F7E985 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADC201AC40C00F7E985 /* BaseVC.swift */; };
+		0F02EAE0201AF21400F7E985 /* VersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADF201AF21400F7E985 /* VersionService.swift */; };
+		0F02EAE1201AF21400F7E985 /* VersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADF201AF21400F7E985 /* VersionService.swift */; };
+		0F02EAE3201AF42900F7E985 /* UIConfigData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F02EAE2201AF42900F7E985 /* UIConfigData.plist */; };
+		0F02EAE4201AF42900F7E985 /* UIConfigData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F02EAE2201AF42900F7E985 /* UIConfigData.plist */; };
 		0F28E5C020166D9000D32876 /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5BF20166D9000D32876 /* UIConfig.swift */; };
 		0F28E5C120166D9000D32876 /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5BF20166D9000D32876 /* UIConfig.swift */; };
 		0F28E5C6201699DA00D32876 /* Font_extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5C5201699DA00D32876 /* Font_extenstion.swift */; };
@@ -85,6 +89,8 @@
 
 /* Begin PBXFileReference section */
 		0F02EADC201AC40C00F7E985 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		0F02EADF201AF21400F7E985 /* VersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionService.swift; sourceTree = "<group>"; };
+		0F02EAE2201AF42900F7E985 /* UIConfigData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UIConfigData.plist; sourceTree = "<group>"; };
 		0F28E5BF20166D9000D32876 /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		0F28E5C5201699DA00D32876 /* Font_extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_extenstion.swift; sourceTree = "<group>"; };
 		0F28E5CA2016A33C00D32876 /* String_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_extension.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 			children = (
 				0FEABAF92011369A00F250E5 /* QuizConfig.swift */,
 				0F28E5BF20166D9000D32876 /* UIConfig.swift */,
+				0F02EAE2201AF42900F7E985 /* UIConfigData.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 			children = (
 				0FA021AA20119CE3009D66E2 /* QuizDataService.swift */,
 				0FA021BA2011CDF0009D66E2 /* ScoreKeeper.swift */,
+				0F02EADF201AF21400F7E985 /* VersionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				0FEABABF2011288300F250E5 /* Assets.xcassets in Resources */,
 				0FEABAF22011312000F250E5 /* SplashVC.storyboard in Resources */,
 				0FA021C320126A09009D66E2 /* ResultsVC.storyboard in Resources */,
+				0F02EAE3201AF42900F7E985 /* UIConfigData.plist in Resources */,
 				0FEABABD2011288300F250E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +414,7 @@
 			files = (
 				0F28E5D22017B46500D32876 /* Main.storyboard in Resources */,
 				0F28E5D42017B47000D32876 /* LaunchScreen.storyboard in Resources */,
+				0F02EAE4201AF42900F7E985 /* UIConfigData.plist in Resources */,
 				0F28E5D92017B48200D32876 /* Info.plist in Resources */,
 				0FA021C420126A09009D66E2 /* ResultsVC.storyboard in Resources */,
 				0FEABAF32011312000F250E5 /* SplashVC.storyboard in Resources */,
@@ -526,6 +536,7 @@
 				0FA11C6D20144481008E878F /* ResultDecorator.swift in Sources */,
 				0F28E5CB2016A33C00D32876 /* String_extension.swift in Sources */,
 				0FA021BB2011CDF0009D66E2 /* ScoreKeeper.swift in Sources */,
+				0F02EAE0201AF21400F7E985 /* VersionService.swift in Sources */,
 				0FA021BF201269CE009D66E2 /* ResultsVC.swift in Sources */,
 				0FA021B72011A7EC009D66E2 /* QuestionParser.swift in Sources */,
 				0FA11C6920130907008E878F /* GradientView.swift in Sources */,
@@ -557,6 +568,7 @@
 				0FA11C62201293D6008E878F /* ResultTVCell.swift in Sources */,
 				0FA11C6E20144481008E878F /* ResultDecorator.swift in Sources */,
 				0F28E5CC2016A33C00D32876 /* String_extension.swift in Sources */,
+				0F02EAE1201AF21400F7E985 /* VersionService.swift in Sources */,
 				0FA021BC2011CDF0009D66E2 /* ScoreKeeper.swift in Sources */,
 				0FA021C0201269CE009D66E2 /* ResultsVC.swift in Sources */,
 				0FAB0AE520182C9F00DEF466 /* QuestionParser_UnitTests.swift in Sources */,

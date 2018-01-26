@@ -52,20 +52,7 @@ class SplashVC: BaseVC {
         }
     }
     func renderVersion() {
-        let short = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-        let ver   = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
-        let df = DateFormatter()
-        df.dateFormat = "MMM dd, yyyy HH:mm:ss"
-        let date = df.string(from: Date())
-        if let short = short, let ver = ver {
-            var verString = "Version \(short) (\(ver)) - \(date)"
-            #if DEBUG_HOME
-                verString = "\(verString) (dev)"
-            #endif
-            versionLabel.text = verString
-        } else {
-            versionLabel.isHidden = true
-        }
+        versionLabel.text = VersionService.getVersionString()
     }
 
     // MARK: Color scheme chooser stuff.
