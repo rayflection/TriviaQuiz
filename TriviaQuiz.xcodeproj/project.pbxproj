@@ -20,7 +20,6 @@
 		0F28E5D22017B46500D32876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABABB2011288300F250E5 /* Main.storyboard */; };
 		0F28E5D42017B47000D32876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC02011288300F250E5 /* LaunchScreen.storyboard */; };
 		0F28E5D62017B47B00D32876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABABE2011288300F250E5 /* Assets.xcassets */; };
-		0F28E5D82017B48100D32876 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC32011288300F250E5 /* Info.plist */; };
 		0F28E5D92017B48200D32876 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC32011288300F250E5 /* Info.plist */; };
 		0F4F58C42019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */; };
 		0F4F58C52019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */; };
@@ -394,7 +393,6 @@
 			files = (
 				0FEABAC22011288300F250E5 /* LaunchScreen.storyboard in Resources */,
 				0FEABABF2011288300F250E5 /* Assets.xcassets in Resources */,
-				0F28E5D82017B48100D32876 /* Info.plist in Resources */,
 				0FEABAF22011312000F250E5 /* SplashVC.storyboard in Resources */,
 				0FA021C320126A09009D66E2 /* ResultsVC.storyboard in Resources */,
 				0FEABABD2011288300F250E5 /* Main.storyboard in Resources */,

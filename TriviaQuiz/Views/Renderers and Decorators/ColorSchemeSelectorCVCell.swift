@@ -25,8 +25,6 @@ class ColorSchemeSelectorCVCell: UICollectionViewCell {
         colorButton.tag = row
     }
     @IBAction func colorButtonTapped(_ sender: Any) {
-        let button = sender as? UIButton
-        print("button tag = \(String(describing: button?.tag)) \(String(describing: nameLabel.text)))")
         if let schemeName = colorScheme?.scheme {
             UIConfigFactory.setCurrentConfigScheme(schemeName)
             NotificationCenter.default.post(

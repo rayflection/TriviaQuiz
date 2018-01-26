@@ -26,30 +26,17 @@ class QuestionVC: BaseVC {
                                                name: NSNotification.Name(rawValue: NotificationKey.nextQuestion),
                                                object:nil)
     }
-    func removeGradientSubviewsFrom(view: UIView) {
-        var deathRow:[UIView] = []
-        for sub in view.subviews {
-            if sub is GradientView {
-                deathRow.append(sub)
-            }
-        }
-        for sub in deathRow {
-            print("Killing \(sub)")
-            sub.removeFromSuperview()
-        }
-    }
+
     @objc override func styleBackgrounds() {
         let uiConfig = UIConfigFactory.getCurrentConfig()
-        print("Questions configging to color: \(uiConfig.colorScheme.scheme.rawValue)")
         
         view.backgroundColor = uiConfig.colorScheme.darkGradientTop
-        print("Question view bg is : \(uiConfig.colorScheme.darkGradientTop)")
         
         let gradientView = GradientView(frame: self.view.bounds,
                                         top:uiConfig.colorScheme.darkGradientTop,
                                         bottom:uiConfig.colorScheme.darkGradientBottom)
         
-        removeGradientSubviewsFrom(view: self.view)
+        GradientView.removeGradientSubviewsFrom(view: self.view)
         
         self.view.insertSubview(gradientView, at: 0)
         
@@ -58,7 +45,7 @@ class QuestionVC: BaseVC {
                                         bottom:uiConfig.colorScheme.lightGradientBottom)
         
         if let gbq = gradBehindQuestion {
-            removeGradientSubviewsFrom(view: gbq)
+            GradientView.removeGradientSubviewsFrom(view: gbq)
         }
         
         gradBehindQuestion.insertSubview(questionGrad, at: 0)

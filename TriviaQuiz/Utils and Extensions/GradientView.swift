@@ -42,5 +42,19 @@ class GradientView: UIView {
     override class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
+    
+    // --------------------------------
+    static func removeGradientSubviewsFrom(view: UIView) {
+        var deathRow:[UIView] = []
+        for sub in view.subviews {
+            if sub is GradientView {
+                deathRow.append(sub)
+            }
+        }
+        for sub in deathRow {
+            sub.removeFromSuperview()
+        }
+    }
+    
 }
 

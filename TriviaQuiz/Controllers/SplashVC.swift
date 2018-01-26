@@ -28,7 +28,6 @@ class SplashVC: BaseVC {
         render()
     }
 
-
     private func render() {
         styleBackgrounds()
         renderDescription()

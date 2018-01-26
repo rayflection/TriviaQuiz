@@ -108,7 +108,7 @@ class ColorSchemeFactory {
                 lightGradTop: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                 lightGradBottom: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                 gradBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-                titleFontCol: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+                titleFontCol: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             )
         default:
             return ColorScheme()
@@ -136,7 +136,6 @@ class UIConfigFactory {
     static private var currentConfig = UIConfig()
     
     static func setCurrentConfigScheme(_ scheme:ColorScheme.SchemeName) {
-        print("ConfigFactory: changing from \(currentConfig.colorScheme.scheme) to \(scheme)")
         currentConfig.colorScheme = ColorSchemeFactory.gimmaAScheme(scheme)
     }
     

@@ -279,7 +279,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X55-w1-mxF">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="176"/>
-                                <color key="backgroundColor" red="0.40425113140000002" green="1" blue="0.35736797040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9cP-a9-lI6">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -336,6 +336,7 @@
                             <constraint firstItem="X55-w1-mxF" firstAttribute="top" secondItem="75m-yR-IJE" secondAttribute="top" id="NCH-yg-MpR"/>
                             <constraint firstAttribute="trailing" secondItem="X55-w1-mxF" secondAttribute="trailing" id="q4c-Gs-WoM"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="XI0-Np-Xnc"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmo-bt-Gi5" userLabel="First Responder" sceneMemberID="firstResponder"/>
