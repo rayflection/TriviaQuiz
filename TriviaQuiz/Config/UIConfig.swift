@@ -17,6 +17,11 @@ struct ColorScheme {
         case white  = "White"
         case clear  = "Clear"
         case custom = "Custom"      // Roll your own
+        
+        // TODO: restructure this enum so I don't have to do this.
+        static var enumerateUserChooseable:[SchemeName] =
+          [.black, .brown, .blue, .red, .white, .clear ]
+        
     }
     var scheme:SchemeName = .clear
     var darkGradientTop:UIColor=UIColor.clear
@@ -24,10 +29,10 @@ struct ColorScheme {
     var lightGradientTop:UIColor=UIColor.clear
     var lightGradientBottom:UIColor=UIColor.clear
     var gradientBorder:UIColor=UIColor.clear
-    var titleFontColor:UIColor=UIColor.black
+    var titleFontColor:UIColor=UIColor.white
     
     init() {
-    }   // return all clear as useless defaults to avoid opnoxtionals
+    }   // return all clear as barely useful defaults to avoid obnoxionals
     init(scheme:SchemeName,
          darkGradTop:UIColor,
          darkGradBottom:UIColor,
@@ -103,7 +108,7 @@ class ColorSchemeFactory {
                 lightGradTop: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                 lightGradBottom: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                 gradBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-                titleFontCol: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+                titleFontCol: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             )
         default:
             return ColorScheme()

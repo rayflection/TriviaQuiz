@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionVC: UIViewController {
+class QuestionVC: BaseVC {
 
     var questionList:[QuestionModel] = []
     var scoreKeeper:ScoreKeeper?
@@ -25,10 +25,9 @@ class QuestionVC: UIViewController {
                                                selector: #selector(self.nextQuestion),
                                                name: NSNotification.Name(rawValue: NotificationKey.nextQuestion),
                                                object:nil)
-
     }
 
-    private func styleBackgrounds() {
+    @objc override func styleBackgrounds() {
         let uiConfig = UIConfigFactory.getCurrentConfig()
         
         view.backgroundColor = uiConfig.colorScheme.darkGradientTop
@@ -36,11 +35,19 @@ class QuestionVC: UIViewController {
         let gradientView = GradientView(frame: self.view.bounds,
                                         top:uiConfig.colorScheme.darkGradientTop,
                                         bottom:uiConfig.colorScheme.darkGradientBottom)
+        
+        GradientView.removeGradientSubviewsFrom(view: self.view)
+        
         self.view.insertSubview(gradientView, at: 0)
         
         let questionGrad = GradientView(frame: gradBehindQuestion.bounds,
                                         top:uiConfig.colorScheme.lightGradientTop,
                                         bottom:uiConfig.colorScheme.lightGradientBottom)
+        
+        if let gbq = gradBehindQuestion {
+            GradientView.removeGradientSubviewsFrom(view: gbq)
+        }
+        
         gradBehindQuestion.insertSubview(questionGrad, at: 0)
 
         questionGrad.layer.cornerRadius = uiConfig.layerSizes.cornerRadius
@@ -52,6 +59,7 @@ class QuestionVC: UIViewController {
         
         quizCategoryLabel.textColor = uiConfig.colorScheme.titleFontColor
         currentCountLabel.textColor = quizCategoryLabel.textColor
+        view.setNeedsDisplay()
     }
     func config(_ list:[QuestionModel],_ scoreKeep:ScoreKeeper) {
         styleBackgrounds()

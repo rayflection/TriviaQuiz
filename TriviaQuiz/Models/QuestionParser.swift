@@ -33,7 +33,6 @@ class QuestionParser {
             model.question = temp.unHTML()
         }
         if let temp = data["difficulty"] as! String? {
-            print (temp)
             model.difficulty = QuestionDifficulty.parseDifficulty(temp)
         }
         if let temp = data["type"] as! String? {

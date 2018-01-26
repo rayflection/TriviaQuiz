@@ -9,41 +9,19 @@
 import UIKit
 
 //
-//  X write tests
-//    x  config
-//    x  data service
-//    x  question parser
-//    x  scoreKeeper
-//    x  question model
-//    x  results model
-//    x  utils and extensions?
-//
-//  x Check into github, create and merge into a dev branch. Testing Xcode.
-//
 //  FUTURE:
 //   choose a categroy of questions in the ConfigurationVC - Later.
 //   let user choose color scheme
 //   let user specify if they're left handed, swap location of Ok/Cancel, and T/F buttons
 //
-// x  Better int values for the Difficulty enum
-// x  Runtime configuration: choose a categroy of questions, choose difficulty,
-//      possibly embedded in the SplashVC
-// x  FIND some way to show difficulty.
-// x  get values from Config
-// x  pretty up the splash page, gradient or something.
-// x Find all the force unwraped optional, and use "if let foo = optional?.someMethod {"
-//     or "guard foo = optional?   {  } else { }
-// x thumbs diddling doesn't belong in the ResultsVC, it belongs in a decorator or renderer
-// x background colors and gradients
-// x button borders and bevels, esp the question "card" - make it float with a drop shadow.
-//  HTML cleanup Pod?
 //
 
-class NavigationVC: UIViewController {
+class NavigationVC: BaseVC {
     
     var quizConfig:QuizConfig?
     var questionVC:QuestionVC?
     var scoreKeeper = ScoreKeeper()
+    @IBOutlet weak var backgroundContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +41,11 @@ class NavigationVC: UIViewController {
             let resultVC = segue.destination as? ResultsVC
             resultVC?.result = scoreKeeper.resultModel
         }
+    }
+    @objc override func styleBackgrounds() {
+        let uiConfig = UIConfigFactory.getCurrentConfig()
+        backgroundContainerView.backgroundColor = uiConfig.colorScheme.darkGradientTop
+        backgroundContainerView.setNeedsDisplay()
     }
     
     private func configNotifications() {

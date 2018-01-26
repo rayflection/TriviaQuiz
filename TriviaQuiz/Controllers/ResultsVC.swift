@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ResultsVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
 
     var result:QuizResultsModel?
     
@@ -25,7 +25,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func styleBackgrounds() {
+    @objc override func styleBackgrounds() {
         let uiConfig = UIConfigFactory.getCurrentConfig()
         
         view.backgroundColor = uiConfig.colorScheme.darkGradientTop

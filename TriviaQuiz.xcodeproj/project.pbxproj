@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F02EADD201AC40C00F7E985 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADC201AC40C00F7E985 /* BaseVC.swift */; };
+		0F02EADE201AC40C00F7E985 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02EADC201AC40C00F7E985 /* BaseVC.swift */; };
 		0F28E5C020166D9000D32876 /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5BF20166D9000D32876 /* UIConfig.swift */; };
 		0F28E5C120166D9000D32876 /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5BF20166D9000D32876 /* UIConfig.swift */; };
 		0F28E5C6201699DA00D32876 /* Font_extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E5C5201699DA00D32876 /* Font_extenstion.swift */; };
@@ -18,8 +20,11 @@
 		0F28E5D22017B46500D32876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABABB2011288300F250E5 /* Main.storyboard */; };
 		0F28E5D42017B47000D32876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC02011288300F250E5 /* LaunchScreen.storyboard */; };
 		0F28E5D62017B47B00D32876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABABE2011288300F250E5 /* Assets.xcassets */; };
-		0F28E5D82017B48100D32876 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC32011288300F250E5 /* Info.plist */; };
 		0F28E5D92017B48200D32876 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FEABAC32011288300F250E5 /* Info.plist */; };
+		0F4F58C42019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */; };
+		0F4F58C52019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */; };
+		0F4F58C72019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C62019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift */; };
+		0F4F58C82019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F58C62019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift */; };
 		0FA021A32011707D009D66E2 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA021A22011707D009D66E2 /* QuestionModel.swift */; };
 		0FA021A42011707D009D66E2 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA021A22011707D009D66E2 /* QuestionModel.swift */; };
 		0FA021AB20119CE3009D66E2 /* QuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA021AA20119CE3009D66E2 /* QuizDataService.swift */; };
@@ -79,10 +84,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F02EADC201AC40C00F7E985 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		0F28E5BF20166D9000D32876 /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		0F28E5C5201699DA00D32876 /* Font_extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_extenstion.swift; sourceTree = "<group>"; };
 		0F28E5CA2016A33C00D32876 /* String_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_extension.swift; sourceTree = "<group>"; };
 		0F28E5CE2016F6B900D32876 /* ConfigurationSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationSelectorVC.swift; sourceTree = "<group>"; };
+		0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeSelectorVC.swift; sourceTree = "<group>"; };
+		0F4F58C62019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeSelectorCVCell.swift; sourceTree = "<group>"; };
 		0FA021A22011707D009D66E2 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		0FA021AA20119CE3009D66E2 /* QuizDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDataService.swift; sourceTree = "<group>"; };
 		0FA021AE2011A137009D66E2 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 			children = (
 				0FA11C6C20144481008E878F /* ResultDecorator.swift */,
 				0FA11C60201293D6008E878F /* ResultTVCell.swift */,
+				0F4F58C62019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift */,
 			);
 			path = "Renderers and Decorators";
 			sourceTree = "<group>";
@@ -213,6 +222,8 @@
 				0FA021BE201269CE009D66E2 /* ResultsVC.swift */,
 				0FD0D69C2015AA79007901C8 /* TrueFalseButtonVC.swift */,
 				0F28E5CE2016F6B900D32876 /* ConfigurationSelectorVC.swift */,
+				0F4F58C32019B0C400FDE00C /* ColorSchemeSelectorVC.swift */,
+				0F02EADC201AC40C00F7E985 /* BaseVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -382,7 +393,6 @@
 			files = (
 				0FEABAC22011288300F250E5 /* LaunchScreen.storyboard in Resources */,
 				0FEABABF2011288300F250E5 /* Assets.xcassets in Resources */,
-				0F28E5D82017B48100D32876 /* Info.plist in Resources */,
 				0FEABAF22011312000F250E5 /* SplashVC.storyboard in Resources */,
 				0FA021C320126A09009D66E2 /* ResultsVC.storyboard in Resources */,
 				0FEABABD2011288300F250E5 /* Main.storyboard in Resources */,
@@ -503,7 +513,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FEABABA2011288300F250E5 /* NavigationVC.swift in Sources */,
+				0F4F58C42019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */,
 				0FA021AB20119CE3009D66E2 /* QuizDataService.swift in Sources */,
+				0F02EADD201AC40C00F7E985 /* BaseVC.swift in Sources */,
 				0FD0D69D2015AA79007901C8 /* TrueFalseButtonVC.swift in Sources */,
 				0FEABAB82011288300F250E5 /* AppDelegate.swift in Sources */,
 				0FEABAE720112CF900F250E5 /* SplashVC.swift in Sources */,
@@ -521,6 +533,7 @@
 				0FEABAF62011352000F250E5 /* Constants.swift in Sources */,
 				0FA021C72012710A009D66E2 /* QuizResultsModel.swift in Sources */,
 				0F28E5CF2016F6B900D32876 /* ConfigurationSelectorVC.swift in Sources */,
+				0F4F58C72019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift in Sources */,
 				0F28E5C020166D9000D32876 /* UIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +546,7 @@
 				0FA021AC20119CE3009D66E2 /* QuizDataService.swift in Sources */,
 				0FD0D69E2015AA79007901C8 /* TrueFalseButtonVC.swift in Sources */,
 				0FEABACD2011288400F250E5 /* QuizConfig_UnitTests.swift in Sources */,
+				0F4F58C82019BA8A00FDE00C /* ColorSchemeSelectorCVCell.swift in Sources */,
 				0FAB0AE12017C41F00DEF466 /* UIConfig_UnitTests.swift in Sources */,
 				0FEABAE820112CF900F250E5 /* SplashVC.swift in Sources */,
 				0FC0210420190EB7005B9A68 /* StringExtension_UnitTests.swift in Sources */,
@@ -547,6 +561,8 @@
 				0FA021C0201269CE009D66E2 /* ResultsVC.swift in Sources */,
 				0FAB0AE520182C9F00DEF466 /* QuestionParser_UnitTests.swift in Sources */,
 				0FC02102201901F8005B9A68 /* ScoreKeeper_UnitTests.swift in Sources */,
+				0F02EADE201AC40C00F7E985 /* BaseVC.swift in Sources */,
+				0F4F58C52019B0C400FDE00C /* ColorSchemeSelectorVC.swift in Sources */,
 				0FA021B82011A7EC009D66E2 /* QuestionParser.swift in Sources */,
 				0FA11C6A20130907008E878F /* GradientView.swift in Sources */,
 				0FA021A42011707D009D66E2 /* QuestionModel.swift in Sources */,
@@ -635,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -686,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -14,6 +14,7 @@ struct NotificationKey {
     static let quizDone              = "kQuizDoneNotifKey"
     static let nextQuestion          = "kNextQuestionNotifKey"
     static let dismissSplash         = "kDismissSplashNotifKey"
+    static let colorSchemeChanged    = "kColorSchemeChangedNotifKey"
 }
 
 // worth putting in a .plist?

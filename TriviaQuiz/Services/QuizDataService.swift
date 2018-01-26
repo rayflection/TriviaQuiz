@@ -15,10 +15,7 @@ class QuizDataService {
                     completion:  @escaping ([NSDictionary]?, String?) -> Void
         )
     {
-        print("config-urlString: \(config.getUrlString())")
-        //
-        // What does this do when it fails, like with a bad URL?
-        //
+
         let foo =
         Alamofire.request(config.getUrlString(), method: .get, parameters: nil, encoding: JSONEncoding.default)
             

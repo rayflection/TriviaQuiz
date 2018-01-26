@@ -8,26 +8,33 @@
 
 import UIKit
 
-class SplashVC: UIViewController {
+class SplashVC: BaseVC {
 
     var config:QuizConfig?
     
     private var chooserVC:ConfigurationSelectorVC?
+    private var colorSelectorVC:ColorSchemeSelectorVC?
     
     @IBOutlet private weak var quizDescription: UILabel!
     @IBOutlet private weak var beginButton: UIButton!
     @IBOutlet private weak var wrapperView: UIView!
-    
+    @IBOutlet         weak var versionLabel: UILabel!
+    @IBOutlet         weak var colorSchemeSelectorButton: UIButton!
+    @IBOutlet         weak var colorSchemeSelectorContainerView: UIView!
+    @IBOutlet         weak var colorButtonAnchor: UIView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         render()
     }
 
     private func render() {
-        styleWrapperView()
+        styleBackgrounds()
         renderDescription()
+        renderVersion()
+        renderColorSchemeSelectorButton()
     }
-    private func styleWrapperView() {
+    @objc override func styleBackgrounds() {
         let uiConfig = UIConfigFactory.getCurrentConfig()
         
         view.backgroundColor = uiConfig.colorScheme.darkGradientTop
@@ -44,6 +51,75 @@ class SplashVC: UIViewController {
             quizDescription.text = "You will be presented with \(count ) \(diff) \(type ) question\(count==1 ? "":"s")."
         }
     }
+    func renderVersion() {
+        let short = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+        let ver   = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+        let df = DateFormatter()
+        df.dateFormat = "MMM dd, yyyy HH:mm:ss"
+        let date = df.string(from: Date())
+        if let short = short, let ver = ver {
+            var verString = "Version \(short) (\(ver)) - \(date)"
+            #if DEBUG_HOME
+                verString = "\(verString) (dev)"
+            #endif
+            versionLabel.text = verString
+        } else {
+            versionLabel.isHidden = true
+        }
+    }
+
+    // MARK: Color scheme chooser stuff.
+    func configColorSchemeSelectorButton() {
+        colorSchemeSelectorButton.tag = 0
+    }
+    func renderColorSchemeSelectorButton() {
+        configColorSchemeSelectorButton()
+    }
+    var gap = CGFloat(0)
+    @IBAction func colorSchemeButtonTapped(_ sender: Any) {
+        if gap < 1.0 {
+            gap = self.colorSchemeSelectorContainerView.frame.origin.x -
+                  self.colorButtonAnchor.frame.origin.x
+        }
+        
+        if colorSchemeSelectorButton.tag == 0  {
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [],
+                animations: {
+                    let deltaX = CGFloat(
+                        self.colorSchemeSelectorContainerView.frame.origin.x +
+                        self.colorSchemeSelectorContainerView.frame.size.width -
+                        self.colorButtonAnchor.frame.origin.x
+                    )
+                    self.colorSchemeSelectorButton.frame.origin.x -= (deltaX - self.gap)
+                    self.colorSchemeSelectorContainerView.frame.origin.x -= deltaX
+                }, completion: { (finished: Bool) in
+                    self.colorSchemeSelectorButton.tag = 1 - self.colorSchemeSelectorButton.tag
+                })
+        } else {
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: [],
+                animations: {
+                    self.colorSchemeSelectorButton.frame.origin.x =
+                        self.colorButtonAnchor.frame.origin.x - self.colorSchemeSelectorButton.frame.size.width
+                    self.colorSchemeSelectorContainerView.frame.origin.x = self.colorButtonAnchor.frame.origin.x + self.gap
+                }, completion: { (finished: Bool) in
+                    self.colorSchemeSelectorButton.tag = 1 - self.colorSchemeSelectorButton.tag
+                    if self.reDisplayColorChooser == true {
+                        self.reDisplayColorChooser = false
+                        self.colorSchemeButtonTapped(self.colorSchemeSelectorButton)
+                    }
+                })
+        }
+    }
+    // MARK: Rotation support
+    var reDisplayColorChooser=false
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if colorSchemeSelectorButton.tag != 0 {
+            reDisplayColorChooser = true
+            self.performSelector(onMainThread: #selector(colorSchemeButtonTapped),
+                                 with: colorSchemeSelectorButton,
+                                 waitUntilDone: true)   // hide
+        }
+    }
     
     // ----------------------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +130,10 @@ class SplashVC: UIViewController {
                 
                 let handler : (QuizConfigRequest?) -> Void = handleNewRequestConfig
                 chooserVC?.callbackHandler = handler
+            }
+        } else if segue.identifier == "embedColorSelectorVC" {
+            if let colorVC = segue.destination as? ColorSchemeSelectorVC {
+                colorSelectorVC = colorVC
             }
         }
     }
