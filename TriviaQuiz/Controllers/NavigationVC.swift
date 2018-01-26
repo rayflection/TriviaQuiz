@@ -16,11 +16,12 @@ import UIKit
 //
 //
 
-class NavigationVC: UIViewController {
+class NavigationVC: BaseVC {
     
     var quizConfig:QuizConfig?
     var questionVC:QuestionVC?
     var scoreKeeper = ScoreKeeper()
+    @IBOutlet weak var backgroundContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,11 @@ class NavigationVC: UIViewController {
             let resultVC = segue.destination as? ResultsVC
             resultVC?.result = scoreKeeper.resultModel
         }
+    }
+    @objc override func styleBackgrounds() {
+        let uiConfig = UIConfigFactory.getCurrentConfig()
+        backgroundContainerView.backgroundColor = uiConfig.colorScheme.darkGradientTop
+        backgroundContainerView.setNeedsDisplay()
     }
     
     private func configNotifications() {

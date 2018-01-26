@@ -11,15 +11,27 @@ import UIKit
 class ColorSchemeSelectorCVCell: UICollectionViewCell {
     
     @IBOutlet weak var colorButton: UIButton!
-    func render(scheme:ColorScheme.SchemeName) {
-        let col = ColorSchemeFactory.gimmaAScheme(scheme)
-        self.backgroundColor = col.darkGradientTop
+    @IBOutlet weak var nameLabel: UILabel!
+    var colorScheme:ColorScheme?
+    
+    func render(scheme:ColorScheme.SchemeName, row:Int) {
+        let scheme = ColorSchemeFactory.gimmaAScheme(scheme)
+        colorScheme = scheme
+        self.backgroundColor = scheme.darkGradientTop
         
-        colorButton.setTitleColor(col.titleFontColor, for: UIControlState.normal)
-        colorButton.setTitle(scheme.rawValue, for: UIControlState.normal)
+        nameLabel.text = scheme.scheme.rawValue
+        nameLabel.textColor = scheme.titleFontColor
+        
+        colorButton.tag = row
     }
     @IBAction func colorButtonTapped(_ sender: Any) {
         let button = sender as? UIButton
-        print("button tag = \(String(describing: button?.tag))")
+        print("button tag = \(String(describing: button?.tag)) \(String(describing: nameLabel.text)))")
+        if let schemeName = colorScheme?.scheme {
+            UIConfigFactory.setCurrentConfigScheme(schemeName)
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: NotificationKey.colorSchemeChanged),
+                object: self, userInfo: nil )
+        }
     }
 }

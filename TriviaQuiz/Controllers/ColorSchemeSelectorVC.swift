@@ -10,26 +10,18 @@ import UIKit
 
 class ColorSchemeSelectorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var collectionView: UICollectionView!
     var data:[ColorScheme.SchemeName]=ColorScheme.SchemeName.enumerateUserChooseable
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        render()
-    }
 
-    func render() {
-        collectionView.reloadData()
-    }
-    
-    // --------------------------------
-    // MARK: Collection View protocols
+    // MARK:  Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:ColorSchemeSelectorCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorSchemeSelectorCVCell", for: indexPath) as! ColorSchemeSelectorCVCell
-        cell.render(scheme:data[indexPath.row])
-        cell.colorButton.tag = indexPath.row
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorSchemeSelectorCVCell", for: indexPath) as! ColorSchemeSelectorCVCell
+        
+        let scheme = data[indexPath.row]
+        cell.render(scheme: scheme, row:indexPath.row)
+
         return cell
     }
 }

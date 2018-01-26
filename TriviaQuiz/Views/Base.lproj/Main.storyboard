@@ -44,6 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QCI-sq-ymY"/>
                     <connections>
+                        <outlet property="backgroundContainerView" destination="NG4-FC-Ay7" id="cWp-I4-iaL"/>
                         <segue destination="csb-mx-tAE" kind="show" identifier="presentSplashVC" animates="NO" id="EsO-0g-dv3"/>
                         <segue destination="BQW-dv-i6M" kind="show" identifier="presentResultsVC" id="SOV-cn-rdU"/>
                     </connections>

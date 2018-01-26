@@ -29,7 +29,7 @@ struct ColorScheme {
     var lightGradientTop:UIColor=UIColor.clear
     var lightGradientBottom:UIColor=UIColor.clear
     var gradientBorder:UIColor=UIColor.clear
-    var titleFontColor:UIColor=UIColor.black
+    var titleFontColor:UIColor=UIColor.white
     
     init() {
     }   // return all clear as barely useful defaults to avoid obnoxionals
@@ -136,6 +136,7 @@ class UIConfigFactory {
     static private var currentConfig = UIConfig()
     
     static func setCurrentConfigScheme(_ scheme:ColorScheme.SchemeName) {
+        print("ConfigFactory: changing from \(currentConfig.colorScheme.scheme) to \(scheme)")
         currentConfig.colorScheme = ColorSchemeFactory.gimmaAScheme(scheme)
     }
     
